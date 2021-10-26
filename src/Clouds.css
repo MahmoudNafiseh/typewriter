@@ -1,0 +1,15 @@
+.clouds3 {
+   background-image: url('./images/clouds3.png');
+   background-repeat: repeat-x;
+   width: 200000px;
+}
+.clouds2 {
+   background-image: url('./images/clouds2.png');
+   background-repeat: repeat-x;
+   width: 200000px;
+}
+.clouds1 {
+   background-image: url('./images/clouds1.png');
+   background-repeat: repeat-x;
+   width: 200000px;
+}

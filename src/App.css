@@ -1,0 +1,108 @@
+html {
+   height: 100%;
+   width: 100%;
+}
+body {
+   height: 100%;
+   width: 100%;
+}
+.test {
+   background-color: #084f8e;
+   background-image: url('./images/sky2.png'),
+      linear-gradient(0deg, #084f8e, #083466 80%);
+}
+
+.moon {
+   border-radius: 100%;
+   box-shadow: 0 0 80px rgba(255, 255, 255, 0.6);
+}
+.title-heading {
+   top: 30%;
+   right: 20%;
+   font-family: Arial, Helvetica, sans-serif;
+   font-weight: normal;
+   font-size: 40px;
+   width: 510px;
+}
+@media (max-width: 999px) {
+   .moon {
+      display: none;
+   }
+   .title-heading {
+      align-items: center;
+      top: auto;
+      width: auto;
+      right: auto;
+   }
+   .headertext {
+      justify-content: center;
+   }
+}
+.btn {
+   margin-top: 2rem;
+}
+.btn:hover {
+   box-shadow: 0 0 10px rgba(81, 255, 0, 0.6);
+   color: black;
+}
+.nav {
+   color: white;
+   display: flex;
+   justify-content: space-around;
+   align-items: center;
+   margin-top: 0.5%;
+   width: 100%;
+}
+.nav2 {
+   color: white;
+   background: rgba(38, 47, 53, 0.95);
+   display: flex;
+   justify-content: space-around;
+   align-items: center;
+   padding-top: 1%;
+   padding-bottom: 1%;
+   width: 100%;
+   position: fixed;
+   z-index: 1000;
+   transition: linear 0.2s all;
+}
+.menu {
+   margin-left: 50%;
+   justify-content: center;
+   align-content: center;
+   text-align: center;
+   display: inline-flex;
+}
+.loginbtn {
+   background-color: white;
+   color: black;
+   border-radius: 20px;
+   width: 60px;
+   height: 30px;
+   justify-content: center;
+}
+.menubutton {
+   background-color: transparent !important;
+   color: white;
+}
+
+.menulist {
+   color: black !important;
+}
+.logintext {
+   box-shadow: none !important;
+}
+.downbutton {
+   color: white;
+   border: 1px white solid;
+   z-index: 100;
+   bottom: 200px;
+   left: 50px;
+   position: absolute;
+   opacity: 0.5;
+}
+.downbutton:hover {
+   opacity: 1;
+   transition: opacity 0.5s ease-in-out;
+   cursor: pointer;
+}
