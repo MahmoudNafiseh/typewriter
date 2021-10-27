@@ -3,7 +3,6 @@ import {
    ChakraProvider,
    Box,
    Text,
-   Link,
    Stack,
    Button,
    Container,
@@ -26,10 +25,12 @@ import Typewriter from 'typewriter-effect';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { fas } from '@fortawesome/free-solid-svg-icons';
+import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 
 import './App.css';
 import Moon from './images/moon.png';
 import Clouds from './Clouds';
+import Type from './Type';
 
 library.add(fas);
 
@@ -68,6 +69,7 @@ const TopPage = () => {
 
    const myRef: any = useRef();
    return (
+      // <Router>
       <Flex
          flexDirection='column'
          w='100%'
@@ -176,16 +178,18 @@ const TopPage = () => {
                            }}
                         />
                      </Text>
-                     <Button
-                        size='lg'
-                        height='48px'
-                        width='200px'
-                        color='#084f8e'
-                        fontWeight='normal'
-                        className='btn'
-                     >
-                        Get Started
-                     </Button>
+                     <Link to='/typewriter'>
+                        <Button
+                           size='lg'
+                           height='48px'
+                           width='200px'
+                           color='#084f8e'
+                           fontWeight='normal'
+                           className='btn'
+                        >
+                           Get Started
+                        </Button>
+                     </Link>
                   </Flex>
                </Flex>
                <a href='#test'>
