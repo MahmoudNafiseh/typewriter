@@ -1,5 +1,4 @@
-import React, { useEffect, useState } from 'react';
-import { VStack } from '@chakra-ui/layout';
+import React from 'react';
 import TopPage from './TopPage';
 import Info from './Info';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';

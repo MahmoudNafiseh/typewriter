@@ -1,9 +1,7 @@
-import { ChakraProvider, ColorModeScript } from '@chakra-ui/react';
+import { ChakraProvider } from '@chakra-ui/react';
 import * as React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import Clouds from './Clouds';
-import Info from './Info';
 import reportWebVitals from './reportWebVitals';
 import * as serviceWorker from './serviceWorker';
 import App from './App';

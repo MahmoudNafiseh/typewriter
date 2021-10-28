@@ -1,9 +1,7 @@
 import React, { useState, useEffect, useRef, useLayoutEffect } from 'react';
 import {
-   ChakraProvider,
    Box,
    Text,
-   Stack,
    Button,
    Container,
    Flex,
@@ -18,19 +16,16 @@ import {
    MenuButton,
    MenuDivider,
    Circle,
-   VStack,
 } from '@chakra-ui/react';
-import { motion } from 'framer-motion';
 import Typewriter from 'typewriter-effect';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { fas } from '@fortawesome/free-solid-svg-icons';
-import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 import './App.css';
 import Moon from './images/moon.png';
 import Clouds from './Clouds';
-import Type from './Type';
 
 library.add(fas);
 
@@ -173,7 +168,7 @@ const TopPage = () => {
                      >
                         Learn Touch Typing&nbsp;
                         <Typewriter
-                           onInit={(typewriter) => {
+                           onInit={(typewriter: any) => {
                               typewriter.typeString('for free!').start();
                            }}
                         />

@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Box, Flex, Image, Heading } from '@chakra-ui/react';
+import { Box } from '@chakra-ui/react';
 import { motion } from 'framer-motion';
 import './Clouds.css';
 const Clouds = React.forwardRef<HTMLDivElement>((props, ref) => {

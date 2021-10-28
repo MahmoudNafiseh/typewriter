@@ -1,6 +1,5 @@
 import * as React from 'react';
 import { Text, Box, Flex, Image, Heading } from '@chakra-ui/react';
-import { motion } from 'framer-motion';
 import './Clouds.css';
 import Typing from './images/typing.png';
 
