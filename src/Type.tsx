@@ -2,7 +2,7 @@ import React, { useState, useMemo, ChangeEvent, useRef } from 'react';
 import useKeyPress from './Hooks/useKeypress';
 import Words from './Words';
 import './Type.css';
-import { Flex } from '@chakra-ui/layout';
+import { Flex, Text } from '@chakra-ui/layout';
 import KeyboardWrapper from './Keyboard';
 const Type = () => {
    const [leftPadding, setLeftPadding] = useState(
@@ -18,32 +18,26 @@ const Type = () => {
    const [input, setInput] = useState('');
    const keyboard = useRef(null);
 
-   const onChangeInput = (event: ChangeEvent<HTMLInputElement>): void => {
-      const input = event.target.value;
-      setInput(input);
-      keyboard.current.setInput(input);
-   };
+   // const onChangeInput = (event: ChangeEvent<HTMLInputElement>): void => {
+   //    const input = event.target.value;
+   //    setInput(input);
+   //    keyboard.current.setInput(input);
+   // };
 
    useKeyPress((key: React.SetStateAction<string>) => {
-      //1
       let updatedOutgoingChars = outgoingChars;
       let updatedIncomingChars = incomingChars;
       setCounter(true);
 
-      //2
       if (key === currentChar) {
-         //3
          if (leftPadding.length > 0) {
             setLeftPadding(leftPadding.substring(1));
          }
-         //4
          updatedOutgoingChars += currentChar;
          setOutgoingChars(updatedOutgoingChars);
 
-         //5
          setCurrentChar(incomingChars.charAt(0));
 
-         //6
          updatedIncomingChars = incomingChars.substring(1);
          if (updatedIncomingChars.split(' ').length < 10) {
             updatedIncomingChars += ' ' + Words(20);
@@ -55,7 +49,7 @@ const Type = () => {
    });
    return (
       <Flex d='flex' justifyContent='center' flexDir='column'>
-         <p className='Character'>
+         <Text className='Character'>
             <span className='Character-out'>
                {(leftPadding + outgoingChars).slice(-20)}
             </span>
@@ -71,7 +65,7 @@ const Type = () => {
                {currentChar}
             </span>
             <span>{incomingChars.substr(0, 20)}</span>
-         </p>
+         </Text>
          <Flex
             d='flex'
             w='50%'
