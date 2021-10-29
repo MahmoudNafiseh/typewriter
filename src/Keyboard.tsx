@@ -1,28 +1,30 @@
-import React, {
-   FunctionComponent,
-   useState,
-   useEffect,
-   MutableRefObject,
-} from 'react';
+import React, { FunctionComponent, useState, MutableRefObject } from 'react';
 import Keyboard from 'react-simple-keyboard';
 import 'react-simple-keyboard/build/css/index.css';
 
 interface IProps {
    onChange: (input: string) => void;
    keyboardRef: MutableRefObject<typeof Keyboard>;
+   keyval: string;
+   currentCharVal: string;
 }
 
 const KeyboardWrapper: FunctionComponent<IProps> = ({
    onChange,
    keyboardRef,
+   currentCharVal,
 }) => {
    const [layoutName, setLayoutName] = useState('default');
-
+   const [keyColor, setKeyColor] = useState(true);
    const onKeyPress = (button: string, event: Event) => {
-      if (button === '{shift}' || button === '{lock}') {
-         setLayoutName(layoutName === 'default' ? 'shift' : 'default');
-      }
-      console.log('button press is:', button);
+      if (button === currentCharVal) {
+         setKeyColor(true);
+      } else if (button === '{space}' && ' ' === currentCharVal)
+         setKeyColor(true);
+      else if (button === '{space}' && currentCharVal !== ' ')
+         setKeyColor(false);
+      else setKeyColor(false);
+      console.log(button, currentCharVal, currentCharVal === ' ');
    };
    const kblayout = {
       default: [
@@ -40,7 +42,6 @@ const KeyboardWrapper: FunctionComponent<IProps> = ({
          '.com @ {space}',
       ],
    };
-
    return (
       <Keyboard
          keyboardRef={(r: (props: any) => JSX.Element) =>
@@ -52,7 +53,8 @@ const KeyboardWrapper: FunctionComponent<IProps> = ({
          physicalKeyboardHighlightPress
          onChange={onChange}
          onKeyPress={onKeyPress}
-         onRender={() => console.log('Rendered')}
+         onKeyReleased={onKeyPress}
+         physicalKeyboardHighlightBgColor={keyColor ? '#09d3ac' : '#ff001596'}
       />
    );
 };

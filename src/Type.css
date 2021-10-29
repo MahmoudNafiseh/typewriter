@@ -9,7 +9,8 @@
    background-color: #09d3ac !important;
 }
 .Character-current-wrong {
-   background-color: #d3095652 !important;
+   background-color: #ff001596 !important;
+   color: white;
 }
 .Character-out {
    color: silver !important;

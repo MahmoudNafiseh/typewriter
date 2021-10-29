@@ -1,4 +1,4 @@
-import React, { useState, useMemo, ChangeEvent, useRef } from 'react';
+import React, { useState, useMemo, useRef } from 'react';
 import useKeyPress from './Hooks/useKeypress';
 import Words from './Words';
 import './Type.css';
@@ -8,7 +8,7 @@ const Type = () => {
    const [leftPadding, setLeftPadding] = useState(
       new Array(20).fill(' ').join('')
    );
-   let words = useMemo(() => Words(20), []);
+   let words = useMemo(() => Words(20).toLowerCase(), []);
 
    const [outgoingChars, setOutgoingChars] = useState('');
    const [currentChar, setCurrentChar] = useState(words.charAt(0));
@@ -45,7 +45,6 @@ const Type = () => {
          setIncomingChars(updatedIncomingChars);
       }
       setKey(key);
-      console.log(key);
    });
    return (
       <Flex d='flex' justifyContent='center' flexDir='column'>
@@ -73,8 +72,13 @@ const Type = () => {
             justifyContent='center'
             alignSelf='center'
             mt='5em'
+            pointerEvents='none'
          >
-            <KeyboardWrapper keyboardRef={keyboard} onChange={setInput} />
+            <KeyboardWrapper
+               currentCharVal={currentChar}
+               keyboardRef={keyboard}
+               onChange={setInput}
+            />
          </Flex>
       </Flex>
    );
