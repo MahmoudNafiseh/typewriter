@@ -11,4 +11,7 @@ The homepage design was similar as I wanted to see how I could implement the mov
 - React Simple Keyboard
 
 ## How to run
-To run, clone this repository using ``` git clone https://github.com/MahmoudNafiseh/typewriter.git ```
+To run, clone this repository using:  ``` git clone https://github.com/MahmoudNafiseh/typewriter.git ```
+Go to the project folder: ``` cd typewriter ```
+Install dependencies with: ``` npm install ``` or ``` yarn install ```
+Run the project:  ``` npm start ```
